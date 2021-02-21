@@ -1,0 +1,18 @@
+<%= render "layouts/navbar" %>
+
+
+
+<br>
+<div class="container">
+  <div class="card">
+    <p class="d-flex justify-content-center"> <%= @item.condition %> <%= @item.brand %> <%= @item.category %> <%= @item.size %> -- <span class="red"> $<%= @item.price %> </span> </p>
+      <%= link_to "edit", edit_item_path, class: "btn btn-info" %>
+  <%= link_to "Delete Item",
+            item_path(@item),
+            class: "btn btn-info",
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
+
+  </div>
+</div>

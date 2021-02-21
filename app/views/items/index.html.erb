@@ -1,0 +1,15 @@
+<%= render "layouts/navbar" %>
+<br>
+<div class="container">
+  <% @items.each do |item| %>
+  <div class="card">
+    <p class="d-flex justify-content-center"> <%= item.condition %> <%= item.brand %> <%= item.category %> <%= item.size %> -- <span class="red"> $<%= item.price %> </span> </p>
+
+    <p class="text-center">
+      <%= link_to "more info", item_path(item)%>
+    </p>
+  </div>
+
+  <br>
+  <% end %>
+</div>
