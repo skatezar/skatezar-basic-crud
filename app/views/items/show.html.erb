@@ -3,17 +3,14 @@
 <br>
 <div class="container">
   <div class="card">
-    <p class="d-flex justify-content-center"> <%= @item.condition %> <%= @item.brand %> <%= @item.category %> <%= @item.size %> -- <span class="red"> $<%= @item.price %> </span> </p>
     <br>
     <div class="d-flex justify-content-center">
       <% @item.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 50, width: 75, crop: :fill %>
-
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path photo.key, height: 300, crop: :fill %>)">
-          Cool article
-        </div>
+        <%= cl_image_tag photo.key, class: "show-img" %>
       <% end %>
     </div>
+    <br>
+    <p class="d-flex justify-content-center"> <%= @item.condition %> <%= @item.brand %> <%= @item.category %> <%= @item.size %> -- <span class="red"> $<%= @item.price %> </span> </p>
     <br>
       <%= link_to "edit", edit_item_path, class: "btn btn-info" %>
       <%= link_to "Delete Item",
@@ -25,3 +22,25 @@
 </div>
 
 
+<style type="text/css">
+  .card-category {
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  }
+
+  .show-img{
+    width:150px;
+  }
+
+</style>
