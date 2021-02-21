@@ -1,0 +1,10 @@
+<%= render "layouts/navbar" %>
+
+hi
+
+<ul class="list-group">
+    <% @comments.each do |comment| %>
+      <li class="list-group-item"><%= comment.content %></li>
+
+    <% end %>
+  </ul>
